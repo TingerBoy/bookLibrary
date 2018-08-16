@@ -1,0 +1,25 @@
+<!--教学计划-->
+ <view class='history-table-wrap'>
+ 
+    <view class="table">
+      <view class="tr">
+          <view class="th th3">周次</view>
+          <view class="th th3">教学内容</view>
+          <view class="th th3">目标</view>
+          <view class="th th3">考核方式</view>
+          <view class="th th3">课外作业</view>
+          <view class="th th3">备注</view>
+      </view>
+      <view wx:for-items="{{book}}" wx:key="{{item.id}}">
+      <view class="tr">
+          <view class="td td3">{{plan[0].week}}</view>
+          <view class="td td3">{{plan[1].teach}}</view>
+          <view class="td td3">{{plan[2].goal}}</view>
+          <view class="td td3">{{plan[3].exam}}</view>
+          <view class="td td3">{{plan[4].homework}}</view>
+          <view class="td td3">{{plan[5].remarks}}</view>
+      </view>
+      
+    </view>
+    </view>
+ </view>

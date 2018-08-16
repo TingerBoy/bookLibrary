@@ -1,0 +1,18 @@
+<!--教师个人中心-->
+<!--这里可以做一个大头像来获取用户信息-->
+<view class="userinfo">
+    <text class="myorder-text">个人信息</text>
+  </view>
+  <view class="person-list">
+    <view class="list-item" catchtap="toOrder2">
+      <image class="item-image" src="../../images/yigou.png"></image>
+      <text class="item-text">我的教材</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item"catchtap="toOrder">
+      <image class="item-image" src="../../images/pingjia.png"></image>
+      <text class="item-text">我的评价</text>
+    </view>
+    <view class="person-line"></view>
+  </view>
+  

@@ -1,0 +1,12 @@
+<!--pages/test/test.wxml-->
+
+<block wx:if="{{manage1}}">
+  <view> vieA </view>
+</block>
+<block wx:if="{{manage2}}">
+  <view> viewB </view>
+</block>
+<block wx:if="{{manage3}}">
+  <view> viewC </view>
+</block>
+<view bindtap='test'>获取manage</view>

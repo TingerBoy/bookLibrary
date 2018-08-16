@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/person/person",
+    "pages/login/login",
+    "pages/studentperson/student",
+    "pages/test/test",
+    "pages/ac/ac",
+    "pages/index/index",
+    "pages/teacher/teacher",
+    "pages/accessable/accessable",
+    "pages/teacherperson/teacherperson",
+    "pages/teacherplan/teacherplan",
+    "pages/bookmessage/bookmessage",
+    "pages/plan/plan",
+    "pages/List/List",
+    "pages/stader/stader",
+    "pages/yigou/yigou",
+    "pages/addbook/addbook",
+    "pages/shopcar/shopcar",
+    "pages/moredetails/moredetails",
+    "pages/bookList/bookList",
+    "pages/pingjiabiao/pingjiabiao",
+    "pages/audit/audit",
+    "pages/function/function"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教材管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/function/function",
+        "iconPath": "images/功能.png",
+        "selectedIconPath": "images/功能HL.png",
+        "text": "功能"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "iconPath": "images/我的.png",
+        "selectedIconPath": "images/我的HL.png",
+        "text": "我"
+      }
+    ]
+  }
+}
