@@ -1,65 +1,61 @@
+var Bmob = require('../../utils/bmob.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
+    book: [],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    
+    // 页面初始化 options为页面跳转所带来的参数
+    this.queryAllBorrowBooks();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-    
+    // 页面渲染完成
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-    
+    // 页面显示
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
-    
+    // 页面隐藏
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-    
+    // 页面关闭
   },
+  moredetails: function () {
+    wx.navigateTo({
+      url: '../moredetails/moredetails',
+    })
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
+  queryAllBorrowBooks: function () {
+    var that = this;
+    const query = Bmob.Query("textbook_info");
+    query.find().then(res => {
+      console.log(res)
+      that.setData({
+        book: res
+      })
+    });
   },
+  queryOneBook: function (key) {
+    var that = this;
+    var inputMsg = that.data.inputValue;
+    var options = {
+      url: config.clubApi.list,
+      data: {
+        appkey: config.appKey,
+        type: 'bookLibrary',
+        key: key
+      }
+    };
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+    util.request(options, (res, err) => {
+      var books = [];
+      for (var i = 0; i < res.data.result.length; i++) {
+        books.push(res.data.result[i].value);
+      }
+      that.setData({
+        bookList: books
+      });
+    });
+
   }
 })

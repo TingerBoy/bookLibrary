@@ -1,4 +1,4 @@
-<!--教材信息-->
+<!--查看教材信息-->
  <view class='history-table-wrap'>
     <view class="table">
       <view class="tr">
@@ -11,16 +11,16 @@
           <view class="th th3">出版年月</view>
           <view class="th th3">ISBN</view>
       </view>
-       <view wx:for-items="{{book}}" wx:key="{{item.id}}">
+       <view wx:key="{{item.id}}">
       <view class="tr">
-          <view class="td td3">{{message[0].number}}</view>
-          <view class="td td3">{{item.name}}</view>
-          <view class="td td3">{{message[2].author}}</view>
-          <view class="td td3">{{item.price}}</view>
-          <view class="td td3">{{message[4].press}}</view>
-          <view class="td td3">{{message[5].order}}</view>
-          <view class="td td3">{{message[6].time}}</view>
-          <view class="td td3">{{message[7].ISBN}}</view>
+          <view class="td td3">{{number}}</view>
+          <view class="td td3">{{bookname}}</view>
+          <view class="td td3">{{author}}</view>
+          <view class="td td3">{{price}}</view>
+          <view class="td td3">{{press}}</view>
+          <view class="td td3">{{edition}}</view>
+          <view class="td td3">{{publishedtime}}</view>
+          <view class="td td3">{{ISBN}}</view>
       </view>
       
     </view>

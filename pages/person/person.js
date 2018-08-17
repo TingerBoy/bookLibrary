@@ -7,7 +7,7 @@ var ac;
 var grids = []
 var student = [
   //学生
-  { "name": "已购教材", "ico": "database.png", "url": "../bookList/bookList" },
+  { "name": "已购教材", "ico": "database.png", "url": "../yigou/yigou" },
   { "name": "我的评价", "ico": "edit.png", "url": "../accessable/accessable" }
 
 ];

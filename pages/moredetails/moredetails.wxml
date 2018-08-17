@@ -11,7 +11,8 @@
       </view>
             <view class="tr">
           <view class="td td1">书名</view>
-          <view class="td td3">C程序设计</view>
+          <view class="td td3">
+          <text>"{{name}}"</text></view>
       </view>
             <view class="tr">
           <view class="td td1">出版社</view>
