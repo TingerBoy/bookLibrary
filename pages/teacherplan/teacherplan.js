@@ -16,8 +16,6 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     this.queryAllBorrowBooks();
     //获取本地缓存的教学计划数据
-    
-    
     try {
       var value1 = wx.getStorageSync('weekly')
       var value2 = wx.getStorageSync('content')

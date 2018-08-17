@@ -4,23 +4,23 @@
       <view class="tr">
           <view class="th th3">序号</view>
           <view class="th th3">书名</view>
-          <view class="th th3">作者</view>
-          <view class="th th3">价格</view>
           <view class="th th3">出版社</view>
+          <view class="th th3">ISBN</view>
+          <view class="th th3">作者</view>
           <view class="th th3">版次</view>
           <view class="th th3">出版年月</view>
-          <view class="th th3">ISBN</view>
+          <view class="th th3">价格</view>
       </view>
        <view wx:key="{{item.id}}">
       <view class="tr">
-          <view class="td td3">{{number}}</view>
+          <view class="td td3">{{num}}</view>
           <view class="td td3">{{bookname}}</view>
-          <view class="td td3">{{author}}</view>
-          <view class="td td3">{{price}}</view>
           <view class="td td3">{{press}}</view>
+          <view class="td td3">{{ISBN}}</view>
+          <view class="td td3">{{author}}</view>
           <view class="td td3">{{edition}}</view>
           <view class="td td3">{{publishedtime}}</view>
-          <view class="td td3">{{ISBN}}</view>
+          <view class="td td3">{{price}}</view>
       </view>
       
     </view>
