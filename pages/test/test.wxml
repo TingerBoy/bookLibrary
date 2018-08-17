@@ -1,12 +1,17 @@
-<!--pages/test/test.wxml-->
-
-<block wx:if="{{manage1}}">
-  <view> vieA </view>
-</block>
-<block wx:if="{{manage2}}">
-  <view> viewB </view>
-</block>
-<block wx:if="{{manage3}}">
-  <view> viewC </view>
-</block>
-<view bindtap='test'>获取manage</view>
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+ <view style="display:flex;">
+  <label>用户名：</label>
+  <input name="userName" placeholder="请输入用户名！" />
+ </view>
+ <view style="display:flex;">
+  <label>密码：</label>
+  <input name="psw" placeholder="请输入密码！" password="true" />
+ </view>
+ <view style="display:flex;margin-top:30px;">
+  <button style="width:30%;" formType="submit" >登录</button>
+  <button style="width:30%" formType="reset" >重置</button>
+ </view>
+</form>
+<view>{{tip}}</view>
+<view>{{userName}}</view>
+<view>{{psw}}</view>

@@ -2,12 +2,27 @@ var Bmob = require('../../utils/bmob.js');
 Page({
   data: {
     book: [],
-    plan: [{week:'1-12'},{teach:'读教材'},{goal:'码代码'},{exam:'上机考试'},
-            {homework:'教学网站'},{remarks:'无'}],
+    plan: [{week:''},
+    {teach:''},
+    {goal:''},
+    {exam:''},
+    {homework:''},
+    {remarks:''}],
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.queryAllBorrowBooks();
+    //获取本地缓存的教学计划数据
+    
+    var plan = [{
+      weekly: '', //周次
+      content: '', //教学内容
+      target: '', //教学目标
+      examination: '', //考核方式
+      homework: '', //课外作业
+      note: '',//备注
+    }]
+    
   },
   onReady: function () {
     // 页面渲染完成

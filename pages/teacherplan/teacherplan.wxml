@@ -19,7 +19,6 @@
           <view class="td td3">{{plan[4].homework}}</view>
           <view class="td td3">{{plan[5].remarks}}</view>
       </view>
-      
     </view>
     </view>
  </view>
