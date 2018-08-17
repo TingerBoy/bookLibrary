@@ -38,6 +38,17 @@ Page({
       //plan: temp//数组换值
     })
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    try {
+      wx.setStorageSync('weekly', e.detail.value.content)
+      wx.setStorageSync('content', e.detail.value.content)
+      wx.setStorageSync('target', e.detail.value.target)
+      wx.setStorageSync('examination', e.detail.value.examination)
+      wx.setStorageSync('homework', e.detail.value.homework)
+      wx.setStorageSync('note', e.detail.value.note)
+      console.log("缓存成功")
+    } catch (e) {
+
+    }
   },
   //点击确认提交后的动作，弹窗检查信息
   clickCheck() {
@@ -45,6 +56,7 @@ Page({
       hideModal: false,
       hidetextarea: true, //隐藏textarea区域，否则弹窗层无法覆盖
     })
+    
   },
   //关闭弹窗
   modalCancel(e) {
@@ -55,25 +67,30 @@ Page({
     })
     console.log("弹窗关闭")
   },
-  modalSubmit(){
+  modalSubmit(e){
     //缓存数据到本地
-    try {
-      wx.setStorageSync('weekly', 'e.detail.value.content')
-      wx.setStorageSync('contents', 'e.detail.value.content')
-      wx.setStorageSync('target', 'e.detail.value.target')
-      wx.setStorageSync('examination', 'e.detail.value.examination')
-      wx.setStorageSync('homework', 'e.detail.value.homework')
-      wx.setStorageSync('note', 'e.detail.value.note')
-      this.setData({
-        hideModal: true,
-        hidetextarea: false,
-      })
-      console.log(e.detail.value.content)
-      console.log("缓存成功")
-    } catch (e) {
-      console.log(e)
-    }
+    this.setData({
+      hideModal: true,
+      hidetextarea: false,
+    })
     console.log("确认提交")
+    //获取缓存内容打印确认、
+    try {
+      var value1 = wx.getStorageSync('weekly')
+      var value2 = wx.getStorageSync('content')
+      var value3 = wx.getStorageSync('target')
+      var value4 = wx.getStorageSync('examination')
+      var value5 = wx.getStorageSync('homework')
+      var value6 = wx.getStorageSync('note')
+      if (value1&&value2&&value3&&value4&&value5&&value6) {
+        console.log(value1,value2,value3,value4,value5,value6)
+        // Do something with return value
+      }else{
+        console.log("获取失败")
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
   /**
    * 生命周期函数--监听页面加载
