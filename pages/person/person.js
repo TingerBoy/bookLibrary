@@ -1,4 +1,5 @@
 // pages/interface/index.js
+//个人中心
 var common = require("../../utils/common.js");
 var Bmob = require('../../utils/bmob.js');
 var student;
