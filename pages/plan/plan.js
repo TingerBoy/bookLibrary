@@ -20,14 +20,6 @@ Page({
     hideModal: true,
   },
   formSubmit: function(e) {
-    /*if (e.detail.value.weekly.length == 0 || e.detail.value.content == 0 || e.detail.value.target.length == 0 ||
-      e.detail.value.examination == 0 || e.detail.value.homework.length == 0 || e.detail.value.note.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '请确认输入完整',
-      })
-    } else {
-    }*/
     this.setData({
       weekly: e.detail.value.weekly, //周次
       content: e.detail.value.content, //教学内容

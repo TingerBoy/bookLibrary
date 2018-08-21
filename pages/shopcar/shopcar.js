@@ -22,22 +22,32 @@ Page({
       title: '提示',
       content: '是否购买',
       success: function (res) {
-        if (res.confirm) {//这里是点击了确定以后
+        if (res.confirm) {
+          //这里是点击了确定
           wx.showModal({
             title: '提示',
-            content: '确认购买',
+            content: '购买成功，是否返回首页',
+            success:function(res){
+              if(res.confirm){
+                wx: wx.switchTab({
+                  url: '../function/function',
+                }),
+                  console.log('购买成功')
+              }
+            }
           })
-          console.log('购买成功')
-        } else {//这里是点击了取消以后
+        } else {
+          //这里是点击了取消
           wx.showModal({
             title: '提示',
             content: '购买取消',
           })
           console.log('用户取消购买')
         }
+      },
+      complent: function () {
       }
     })
-    console.log('购买结束')
   },
   /**
    * 当前商品选中事件

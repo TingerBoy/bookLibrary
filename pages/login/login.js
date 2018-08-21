@@ -53,23 +53,36 @@ Page({
               if (res[0].manage == 0) { //学生登陆
                 wx.switchTab({
                   url: '../function/function'
+                }),
+                wx.showToast({
+                  title: '欢迎使用教材管理系统',
+                  icon: 'none',
+                  duration: 2000
                 })
-                console.log("身份识别值"+res[0].manage)
                 console.log("学生登陆成功")
               }
               if (res[0].manage == 5) { //教务员
                 wx.switchTab({
-                  url: '../function/function',
-                })
-                console.log(res[0].manage)
+                  url: '../function/function'
+                  
+                }),
+                wx.showToast({
+                  title: '欢迎使用教材管理系统',
+                  icon: 'success',
+                  duration: 2000
+                }),
                 console.log("教务员登陆成功")
               }
               if (res[0].manage == 3) { //教师
                 wx.switchTab({
                   url: '../function/function',
-                })
+                }),
+                  wx.showToast({
+                    title: '欢迎使用教材管理系统',
+                    icon: 'success',
+                    duration: 2000
+                  }),
                 console.log("教师登陆成功")
-                console.log(res[0].manage)
               }
             }
           })
