@@ -10,14 +10,14 @@
           <view class="th th3">课外作业</view>
           <view class="th th3">备注</view>
       </view>
-      <view wx:key="{{item.id}}">
+      <view wx:for="{{plan}}" wx:key="{{item.id}}">
       <view class="tr">
-          <view class="td td3">{{weekly}}</view>
-          <view class="td td3">{{content}}</view>
-          <view class="td td3">{{target}}</view>
-          <view class="td td3">{{examination}}</view>
-          <view class="td td3">{{homework}}</view>
-          <view class="td td3">{{note}}</view>
+          <view class="td td3">{{item.weekly}}</view>
+          <view class="td td3">{{item.content}}</view>
+          <view class="td td3">{{item.target}}</view>
+          <view class="td td3">{{item.examination}}</view>
+          <view class="td td3">{{item.homework}}</view>
+          <view class="td td3">{{item.note}}</view>
       </view>
     </view>
     </view>

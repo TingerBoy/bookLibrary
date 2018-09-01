@@ -25,8 +25,6 @@ var ac=[
   { "name": "查询订购情况", "ico": "edits.png", "url": "../List/List" },
   { "name": "审核教材信息", "ico": "edits.png", "url": "../audit/audit" },
   { "name": "审核清单 ", "ico": "book.png", "url": "../stader/stader" },
-  { "name": "查看教学计划 ", "ico": "book.png", "url": "../teacherplan/teacherplan" },
-  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookmessage/bookmessage" }
 ];
 
 Page({

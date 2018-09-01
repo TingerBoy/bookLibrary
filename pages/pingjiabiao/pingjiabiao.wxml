@@ -15,13 +15,22 @@
                 <view class="item" style="left:0rpx" data-score="{{item + 0.5}}" data-idx='{{idx}}' bindtap="selectLeft"></view>
                 <view class="item" style="left:20rpx" data-score="{{item + 1}}" data-idx='{{idx}}' bindtap="selectRight"></view>
               </image>
+              
             </block>
-          </view>
 
+            <!-- 此循环是点击星星后显示的评价 -->
+             
+                <view style="margin-left:420rpx"></view>
+              
+          </view>
+          
         </view>
+        
       </block>
+        
         <view class="textarea-wrp">
-        <textarea auto-focus="true" style="height: 3em" />
+        <textarea auto-focus="false" style="height: 2em" placeholder="书本满足你的期待吗？说说它的优点和不足的地方吧" bindinput='searchInputEvent' value="{{infofrominput}}">
+        </textarea>
       </view>
       <button class='submit_button' bindtap='submit_evaluate' type='primary'>提交</button>
     </view>

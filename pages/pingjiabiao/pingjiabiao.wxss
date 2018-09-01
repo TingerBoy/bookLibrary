@@ -43,7 +43,7 @@
   margin: 20rpx;
 }
 .textarea-wrp {
-    padding: 0 50rpx;
+    padding: 20rpx 50rpx;
     font-size: 30rpx;
     height: 300rpx;
     margin-top: 80rpx;

@@ -4,6 +4,7 @@
     "pages/choice/choice",
     "pages/addbook/addbook",
     "pages/plan/plan",
+    "pages/myevaluate_stu/myevaluate_stu",
     "pages/bookmessage/bookmessage",
     "pages/teacherplan/teacherplan",
     "pages/moredetails/moredetails",

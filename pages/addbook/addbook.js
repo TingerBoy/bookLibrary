@@ -5,14 +5,16 @@ Page({
   /**
    * 页面的初始数据*/
   data: {
-    numb:"",
-    bookname: "",
-    press: "",
-    ISBN: "",
-    author: "",
-    edition: "",
-    price: "",
-    publishedtime:"",
+    plan:[{
+      'num': "",
+      'bookname': "",
+      'press': "",
+      'ISBN': "",
+      'author': "",
+      'edition': "",
+      'price': "",
+      'publishedtime': ""}],
+
     hideModal: true,
   },
   formSubmit: function (e) {
@@ -39,8 +41,22 @@ Page({
       wx.setStorageSync('price', e.detail.value.price)
       console.log("缓存成功")
     } catch (e) {
-
     }
+    var obj = e.detail.value;
+    var num = obj.num;
+    var bookname = obj.bookname;
+    var press = obj.press;
+    var ISBN = obj.ISBN;
+    var author = obj.author;
+    var edition = obj.edition;
+    var publishedtime = obj.publishedtime;
+    var price = obj.price;
+    if (num.length <= 0 || bookname.length <= 0 || press.length <= 0 || ISBN.length <= 0 || author.length <= 0 || edition.length <= 0 || publishedtime.length <= 0 || price.length <= 0) {
+      return;
+    }
+    this.data.plan.push(obj);
+    var update = this.data.plan;
+    console.log(update);
   },
   
     //点击确认提交后的动作，弹窗检查信息
@@ -51,6 +67,19 @@ Page({
       })
 
     },
+
+  clickCheck2() {
+    var plan = this.data.plan;
+    let planStr = JSON.stringify(plan)
+    console.log(plan);
+    wx.navigateTo({
+      url: '../bookmessage/bookmessage?planStr=' + planStr,
+      success: function (res) {
+      }
+    })
+  },
+
+
     //关闭弹窗
     modalCancel(e) {
       console.log("关闭", e)
@@ -61,12 +90,20 @@ Page({
       console.log("弹窗关闭，返回修正")
     },
     modalSubmit(e){//确认提交按钮
-      this.setData({
-        hideModal: true,
-        hidetextarea: false,
-      })
       console.log("确认提交")
+
       try {
+        this.setData({
+          'num': wx.getStorageSync('num'),
+          'bookname': wx.getStorageSync('bookname'),
+          'press': wx.getStorageSync('press'),
+          'ISBN': wx.getStorageSync('ISBN'),
+          'author': wx.getStorageSync('author'),
+          'publishedtime': wx.getStorageSync('publishedtime'),
+          'price': wx.getStorageSync('price'),
+          hideModal: true,
+          hidetextarea: false,
+        })
         var value1 = wx.getStorageSync('num')
         var value2 = wx.getStorageSync('bookname')
         var value3 = wx.getStorageSync('press')

@@ -1,6 +1,6 @@
 <!--教材评价-->
   <view class="book-content">
-    <view wx:for-items="{{book}}" wx:key="{{item.id}}">
+    <view wx:for-items="{{book}}" wx:key="{{item.id}}" data-id="{{item.objectId}}">
       <view class="book-list">
         <view class="book-image">
           <image src="{{item.image}}" mode="aspectFit"></image>

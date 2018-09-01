@@ -78,6 +78,10 @@
     <view class="weui-btn-area">
         <button class="weui-btn" type="primary" bindtap="clickCheck" formType="submit">录入</button>
 </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="clickCheck2" >查看所录信息</button>
+</view>
+
 </form>
  <!-- 弹出校对信息窗口 -->
   <modal class="modal" hidden="{{hideModal}}" bindconfirm="modalSubmit" bindcancel="modalCancel"

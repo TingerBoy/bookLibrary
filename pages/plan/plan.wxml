@@ -64,6 +64,13 @@
     <view class="weui-btn-area">
       <button class="weui-btn" type="primary" formType="submit" bindtap="clickCheck">录入</button>
     </view>
+    
+
+        <view class="weui-btn-area">
+      <button class="weui-btn" type="primary"bindtap="clickCheck2">查看所录信息</button>
+    </view>
+
+
   </view>
 </form>
 
