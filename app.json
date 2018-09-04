@@ -4,6 +4,7 @@
     "pages/choice/choice",
     "pages/addbook/addbook",
     "pages/plan/plan",
+    "pages/clearLogin/clearLogin",
     "pages/myevaluate_stu/myevaluate_stu",
     "pages/bookmessage/bookmessage",
     "pages/teacherplan/teacherplan",
@@ -49,8 +50,6 @@
         "selectedIconPath": "images/我的HL.png",
         "text": "我的"
       }
-      
-      
     ]
   }
 }

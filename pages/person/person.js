@@ -9,13 +9,15 @@ var grids = []
 var student = [
   //学生
   { "name": "已购教材", "ico": "database.png", "url": "../yigou/yigou" },
-  { "name": "我的评价", "ico": "edit.png", "url": "../myevaluate_stu/myevaluate_stu" }
+  { "name": "我的评价", "ico": "edit.png", "url": "../accessable/accessable" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin"}
 
 ];
 var teacher = [
   //教师
   { "name": "我的教材", "ico": "edits.png", "url": "../addbook/addbook" },
-  { "name": "我的评价", "ico": "edit.png", "url": "../bookList/bookList" }
+  { "name": "我的评价", "ico": "edit.png", "url": "../bookList/bookList" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin" }
 ];
 var ac = [
   //教务员
@@ -23,7 +25,8 @@ var ac = [
   { "name": "审核教材信息", "ico": "edits.png", "url": "../audit/audit" },
   { "name": "审核清单 ", "ico": "book.png", "url": "../stader/stader" },
   { "name": "查看教学计划 ", "ico": "book.png", "url": "../teacherplan/teacherplan" },
-  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookmessage/bookmessage" }
+  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookmessage/bookmessage" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin" }
 ];
 
 Page({

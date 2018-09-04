@@ -2,6 +2,10 @@ var Bmob = require('../../utils/bmob.js');
 Page({
   data: {
     book: [],
+    title_disabled: true,//控制修改表头名字
+    management_good: false,
+    select_all: false,
+    middlebook: [],
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -12,6 +16,14 @@ Page({
   },
   onShow: function () {
     // 页面显示
+    for (var i in this.data.book) {
+      var c = "book[" + i + "].checked"
+      console.log("增加checked")
+      that.setData({
+        [c]: "flase"
+      })
+
+    }
   },
   onHide: function () {
     // 页面隐藏
@@ -58,6 +70,9 @@ Page({
 
   },
   aus: function () {
+    var that = this;
+    let book = that.data.book;
+    let book2 = [];
     wx.showModal({
       title: '提示',
       content: '确认通过审核',
@@ -66,6 +81,16 @@ Page({
           wx.showModal({
             title: '提示',
             content: '通过审核',
+          })
+          console.log(book);
+          for (let i = 0; i < book.length; i++) {
+            if (book[i].checked == false) {
+              book2.push(book[i]);
+            }
+          }
+          that.setData({
+            book: book2,
+            middlebook: []
           })
           console.log('审核通过')
         } else {//这里是点击了取消以后
@@ -80,6 +105,9 @@ Page({
     console.log('审核结束')
   },
   auf: function () {
+    var that = this;
+    let book = that.data.book;
+    let book2 = [];
     wx.showModal({
       title: '提示',
       content: '确认审核不通过',
@@ -88,6 +116,16 @@ Page({
           wx.showModal({
             title: '提示',
             content: '确认审核不通过',
+          }) 
+          console.log(book);
+          for (let i = 0; i < book.length; i++) {
+            if (book[i].checked == false) {
+              book2.push(book[i]);
+            }
+          }
+          that.setData({
+            book: book2,
+            middlebook: []
           })
           console.log('确认审核不通过')
         } else {//这里是点击了取消以后
@@ -102,4 +140,97 @@ Page({
     console.log('审核结束')
   },
   
+
+  // 审核
+  management:function(){
+    let that = this;
+    let book = that.data.book;
+    let book2 = [];
+    for (let i = 0; i < book.length; i++) {
+      book[i].checked = false;
+      book2.push(book[i]);
+    }
+    that.setData({
+      book: book2,
+    })
+    that.setData({
+      management_good: true,
+      select_all: false,
+    })
+  },
+  finish_management:function(){
+    let that = this;
+    that.setData({
+      management_good:false,
+    })
+  },
+
+
+  // 选择
+  select:function(e){
+    var that = this;
+    let book2 = [];
+    if (that.data.management_good == false){
+       return;
+    }else{
+      var book = that.data.book;
+      var index = e.currentTarget.dataset.id;
+      book[index].checked = !book[index].checked;
+      console.log(book);
+
+      for(let i=0;i<book.length;i++){
+         if(book[i].checked){
+           book2.push(book[i])
+         }
+      };
+      that.setData({
+        book: book,
+        middlebook:book2
+      })
+    }
+  },
+
+  // 全选
+  select_all:function(){
+    let that = this;
+    console.log("全选")
+    that.setData({
+      select_all: !that.data.select_all
+    })
+    if (that.data.select_all){
+      let book = that.data.book;
+      let book2 = [];
+      for (let i = 0; i < book.length; i++) {
+        if (book[i].checked == true) {
+          book2.push(book[i]);
+        }else{
+          book[i].checked = true;
+          book2.push(book[i]);
+        }
+      }
+      that.setData({
+        book: book2,
+        middlebook:book2
+      })
+    }
+  },
+  // 取消全选
+  select_none:function(){
+    let that = this;
+    console.log("取消全选")
+    that.setData({
+      select_all: !that.data.select_all
+    })
+    let book = that.data.book;
+    let book2 = [];
+    for (let i = 0; i < book.length; i++) {
+        book[i].checked = false;
+        book2.push(book[i]);
+    }
+    that.setData({
+      book: book2,
+      middlebook:[]
+    })
+  },
+
 })

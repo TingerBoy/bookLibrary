@@ -1,5 +1,77 @@
+
+.header {
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 1rpx solid #d6d6d6;
+}
+.header .header_con {
+  width: 700rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.header .header_con .right{
+  color: #ff4965;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #d6d6d6;
+  background-color: #fff;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+
+.flex_between{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex_start{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex_end{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom .left{
+  margin-left: 25rpx;
+}
+.bottom .left .select_none{
+  width: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid #d6d6d6;
+  border-radius: 50%;
+}
+.bottom .right .adopt{
+  width: 220rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #49ff58;
+  color: #fff;
+}
+.bottom .right .sure{
+  width: 220rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #ff4949;
+  color: #fff;
+}
+
 .book-content{
-  margin-top: 90rpx;
+  margin-bottom: 250rpx;
 }
 
 .book-list{
@@ -12,13 +84,23 @@
   margin-top: 20rpx;
   background-color: #fff;
 }
-
 .book-image{
   flex: 0 0 32%;
   box-sizing: border-box;
   min-height: 242rpx;
 }
-
+/*新增wxss*/
+.lefts{
+  margin-top:90rpx;
+  margin-left: 20rpx;
+}
+.icon_none{
+  width: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid #d6d6d6;
+  border-radius: 50%;
+}
+/****/
 .book-image image{
   
   height: 242rpx;
