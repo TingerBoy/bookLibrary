@@ -27,6 +27,9 @@ Page({
 
   },
   choice: function () {
+    var that = this;
+    let book = that.data.book;
+    let book2 = [];
     wx.showModal({
       title: '提示',
       content: '是否选用',
@@ -39,6 +42,17 @@ Page({
             fail: function(res) {},
             complete: function(res) {},
           })
+
+          for (let i = 0; i < book.length; i++) {
+            if (book[i].checked == false) {
+              book2.push(book[i]);
+            }
+          }
+          that.setData({
+            book: book2,
+            middlebook: []
+          })
+
           console.log('选用成功')
         } else {//这里是点击了取消以后
           
@@ -80,5 +94,109 @@ Page({
       });
     });
 
-  }
+  },
+
+
+
+
+
+
+
+
+  // 选用
+  management: function () {
+    let that = this;
+    let book = that.data.book;
+    let book2 = [];
+    for (let i = 0; i < book.length; i++) {
+      book[i].checked = false;
+      book2.push(book[i]);
+    }
+    that.setData({
+      book: book2,
+    })
+    that.setData({
+      management_good: true,
+      select_all: false,
+    })
+  },
+  finish_management: function () {
+    let that = this;
+    that.setData({
+      management_good: false,
+    })
+  },
+
+
+  // 选择
+  select: function (e) {
+    var that = this;
+    let book2 = [];
+    if (that.data.management_good == false) {
+      return;
+    } else {
+      var book = that.data.book;
+      var index = e.currentTarget.dataset.id;
+      book[index].checked = !book[index].checked;
+      console.log(book);
+
+      for (let i = 0; i < book.length; i++) {
+        if (book[i].checked) {
+          book2.push(book[i])
+        }
+      };
+      that.setData({
+        book: book,
+        middlebook: book2
+      })
+    }
+  },
+
+  // 全选
+  select_all: function () {
+    let that = this;
+    console.log("全选")
+    that.setData({
+      select_all: !that.data.select_all
+    })
+    if (that.data.select_all) {
+      let book = that.data.book;
+      let book2 = [];
+      for (let i = 0; i < book.length; i++) {
+        if (book[i].checked == true) {
+          book2.push(book[i]);
+        } else {
+          book[i].checked = true;
+          book2.push(book[i]);
+        }
+      }
+      that.setData({
+        book: book2,
+        middlebook: book2
+      })
+    }
+  },
+  // 取消全选
+  select_none: function () {
+    let that = this;
+    console.log("取消全选")
+    that.setData({
+      select_all: !that.data.select_all
+    })
+    let book = that.data.book;
+    let book2 = [];
+    for (let i = 0; i < book.length; i++) {
+      book[i].checked = false;
+      book2.push(book[i]);
+    }
+    that.setData({
+      book: book2,
+      middlebook: []
+    })
+  },
+
+
+
+
+
 })
