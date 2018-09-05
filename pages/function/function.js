@@ -16,7 +16,7 @@ var teacher=[
   //教师
   { "name": "选用教材", "ico": "edits.png", "url": "../choice/choice" },
   { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookList/bookList" },
-  { "name": "评价教材", "ico": "edit.png", "url": "../bookList/bookList" }
+  { "name": "评价教材", "ico": "edit.png", "url": "../accessable/accessable" }
 ];
 var ac=[
   //教务员
