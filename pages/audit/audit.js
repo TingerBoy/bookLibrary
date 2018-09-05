@@ -10,12 +10,6 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.queryAllBorrowBooks();
-  },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
     for (var i in this.data.book) {
       var c = "book[" + i + "].checked"
       console.log("增加checked")
@@ -24,6 +18,13 @@ Page({
       })
 
     }
+  },
+  onReady: function () {
+    // 页面渲染完成
+  },
+  onShow: function () {
+    // 页面显示
+   
   },
   onHide: function () {
     // 页面隐藏
