@@ -1,38 +1,42 @@
 // pages/interface/index.js
+//个人中心
 var common = require("../../utils/common.js");
 var Bmob = require('../../utils/bmob.js');
 var student;
 var teacher;
 var ac;
-var grids=[]
- var student = [
+var grids = []
+var student = [
   //学生
-  { "name": "教材一览", "ico": "database.png", "url": "../bookList/bookList" },
-  { "name": "教材订购", "ico": "footer-icon-03.png", "url": "../shopcar/shopcar" },
-  { "name": "教材评价", "ico": "edit.png", "url": "../accessable/accessable" }
-  
+  { "name": "已购教材", "ico": "database.png", "url": "../yigou/yigou" },
+  { "name": "我的评价", "ico": "edit.png", "url": "../accessable/accessable" },
+
+  { "name": "意见反馈", "ico": "edit.png", "url": "../suggestion/suggestion" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin"},
+
+
 ];
-var teacher=[
+var teacher = [
   //教师
-  { "name": "选用教材", "ico": "edits.png", "url": "../choice/choice" },
-  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookList/bookList" },
-  { "name": "评价教材", "ico": "edit.png", "url": "../bookList/bookList" }
+  { "name": "我的教材", "ico": "edits.png", "url": "../addbook/addbook" },
+  { "name": "我的评价", "ico": "edit.png", "url": "../bookList/bookList" },
+
+  { "name": "意见反馈", "ico": "edit.png", "url": "../suggestion/suggestion" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin" }
 ];
-var ac=[
+var ac = [
   //教务员
-  { "name": "录入教学计划", "ico": "edits.png", "url": "../plan/plan" },
-  { "name": "录入教材信息", "ico": "edits.png", "url": "../addbook/addbook" },
   { "name": "查询订购情况", "ico": "edits.png", "url": "../List/List" },
   { "name": "审核教材信息", "ico": "edits.png", "url": "../audit/audit" },
   { "name": "审核清单 ", "ico": "book.png", "url": "../stader/stader" },
   { "name": "查看教学计划 ", "ico": "book.png", "url": "../teacherplan/teacherplan" },
-  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookmessage/bookmessage" }
+  { "name": "查看教材信息 ", "ico": "book.png", "url": "../bookmessage/bookmessage" },
+  { "name": "意见反馈", "ico": "edit.png", "url": "../suggestion/suggestion" },
+  { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin" }
 ];
-
 Page({
-
   data: {
-    grids:grids
+    grids: grids
   },
   onLoad: function () {
     wx.checkSession({
@@ -49,9 +53,9 @@ Page({
     var value = wx.getStorageSync('manage')
     console.log(value)
     //学生
-    if(value==0){
+    if (value == 0) {
       this.setData({
-        grids:student
+        grids: student
       })
     }
     //教师
@@ -66,5 +70,5 @@ Page({
         grids: ac
       })
     }
-    }
+  }
 })
