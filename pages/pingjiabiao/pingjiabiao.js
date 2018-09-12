@@ -59,7 +59,6 @@ Page({
       // wx.setStorageSync('satisfaction', this.data.scores[1])
 
     } catch (e) {
-
     }
 
     wx.showModal({

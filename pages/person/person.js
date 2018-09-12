@@ -19,7 +19,7 @@ var student = [
 var teacher = [
   //教师
   { "name": "我的教材", "ico": "edits.png", "url": "../addbook/addbook" },
-  { "name": "我的评价", "ico": "edit.png", "url": "../bookList/bookList" },
+  { "name": "我的评价", "ico": "edit.png", "url": "../myevaluate_stu/myevaluate_stu" },
 
   { "name": "意见反馈", "ico": "edit.png", "url": "../suggestion/suggestion" },
   { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin" }
