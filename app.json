@@ -1,5 +1,6 @@
 {
-  "pages": [ 
+  "pages": [
+    
     "pages/login/login",
     "pages/suggestion/suggestion",
     "pages/choice/choice",

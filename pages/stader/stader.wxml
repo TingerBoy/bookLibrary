@@ -1,6 +1,6 @@
 <!--教材订购情况-->
  <view class='history-table-wrap'>
-
+ <view wx:for-items="{{book}}" wx:key="{{item.id}}">
     <view class="table">
       <view class="tr">
           <view class="th th3">院系</view>
@@ -11,7 +11,6 @@
           <view class="th th3">总价(折后)</view>
           <view class="th th3">购买名单</view>
       </view>
-       <view wx:for-items="{{book}}" wx:key="{{item.id}}">
       <view class="tr">
       <!--此处应该还要有个循环连接后台然后看是多少种书多少行东西-->
           <view class="td td3">{{item.class}}</view>

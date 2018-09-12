@@ -17,8 +17,17 @@ Page({
     // 页面隐藏
   },
   onUnload: function () {
-    
     // 页面关闭
+  },
+  t: function () {
+    wx.navigateTo({
+      url: '../moredetails/moredetails',
+    })
+  },
+  comment:function(){
+    wx.navigateTo({
+      url: '../writecomment/writecomment',
+    })
   },
   queryAllBorrowBooks: function () {
     var that = this;
@@ -32,7 +41,6 @@ Page({
   },
   queryOneBook: function (key) {
     var that = this;
-
     var inputMsg = that.data.inputValue;
     var options = {
       url: config.clubApi.list,
@@ -42,8 +50,7 @@ Page({
         key: key
       }
     };
-
-    util.request(options, (res, err) => {
+        util.request(options, (res, err) => {
       var books = [];
       for (var i = 0; i < res.data.result.length; i++) {
         books.push(res.data.result[i].value);
@@ -53,12 +60,6 @@ Page({
       });
     });
 
-  },
-  jumpBtn:function(options){
-    var id = options.target.id;
-    console.log("这个id是"+id);
-    wx.navigateTo({
-      url: '../pingjiabiao/pingjiabiao?id='+id,
-    })
   }
+  
 })

@@ -9,7 +9,7 @@ var grids = []
 var student = [
   //学生
   { "name": "已购教材", "ico": "database.png", "url": "../yigou/yigou" },
-  { "name": "我的评价", "ico": "edit.png", "url": "../accessable/accessable" },
+  { "name": "我的评价", "ico": "edit.png", "url": "../myevaluate_stu/myevaluate_stu" },
 
   { "name": "意见反馈", "ico": "edit.png", "url": "../suggestion/suggestion" },
   { "name": "退出登录", "ico": "getInfo.png", "url": "../clearLogin/clearLogin"},

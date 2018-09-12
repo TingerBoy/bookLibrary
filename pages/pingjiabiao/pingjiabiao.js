@@ -1,6 +1,8 @@
+var array = [];
 Page({
 
   data: {
+    book:[],
     evaluate_contant: ['商品评价', '满意度'],
     stars: [0, 1, 2, 3, 4],
     normalSrc: '../../images/star1.png',
@@ -8,31 +10,53 @@ Page({
     halfSrc: '../../images/star3.png',
     score: 0,
     scores: [0, 0, 0],
-    infofrominput: '',
-    goods: 0,
-    satisfaction: 0,
+    comment: [
+      // {infofrominput: '',goods: 0, satisfaction: 0,id:'',}
+    ]
+   
   },
+  onLoad: function (options) {
+    // console.log(option.query)
+    var bean=options.id;
+    console.log("获取到的id是"+options.id);
+    this.setData({
+      bean:bean
+    })
+  },
+
 
   //获取输入值
 
   searchInputEvent: function (e) {
-
-    console.log(e.detail.value)
-
+    var infofrominput=e.detail.value
     this.setData({
-      infofrominput: e.detail.value
+      infofrominput: infofrominput
     })
-
+     
+    
+    // let information="comment[+index+].infofrominput"
+    // console.log(e.detail.value)
+    // information: e.detail.value,
   },
 
   // 提交事件
   submit_evaluate: function (e) {
-
+    var obj = {};
+    obj.id = this.data.bean;
+    obj.information = this.data.infofrominput;
+    obj.good = 0;
+    obj.satisfaction = 0;
+    array.push(obj);
+    this.setData({
+      "comment": array
+    })
+    var comment=this.data.comment;
+    console.log(comment);
     try {
-
-      wx.setStorageSync('infofrominput', this.data.infofrominput)
-      wx.setStorageSync('goods', this.data.scores[0])
-      wx.setStorageSync('satisfaction', this.data.scores[1])
+      wx.setStorageSync('comment',comment)
+      // wx.setStorageSync('infofrominput', this.data.infofrominput)
+      // wx.setStorageSync('goods', this.data.scores[0])
+      // wx.setStorageSync('satisfaction', this.data.scores[1])
 
     } catch (e) {
 
@@ -57,12 +81,12 @@ Page({
 
             success: function(res){
               if(res.confirm){
-                wx.redirectTo({
-                  url: '../accessable/accessable',
+                wx.switchTab({
+                  url: '../function/function',
                 })
               }else{
-                wx.redirectTo({
-                  url: '../accessable/accessable',
+                wx.switchTab({
+                  url: '../function/function',
                 })
               }
             }

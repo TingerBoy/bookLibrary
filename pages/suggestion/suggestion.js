@@ -73,6 +73,8 @@ Page({
   //提交反馈内容
   submitOpinion: function(e){
     var that = this;
+    var op=this.data.opinion;
+    console.log(op)
     if(!that.data.opinion){
       wx.showModal({
         title: '未填写意见',
