@@ -18,21 +18,22 @@
       </view>
       <view class="line"></view>
 
+    <view class="textarea-wrp" wx:for="{{comment}}" wx:for-item="xx" wx:key="xx.id">
     <view class='container'>
-    <view class='evaluate_contant'>
+    <view class='evaluate_contant' wx:if="{{xx.id==item.objectId}}">
         <view class='evaluate_item'>
           <view class='evaluate_title'>{{evaluate_contant[0]}}</view>
-          <block wx:for="{{goods}}" wx:key="index">
+          <block wx:for="{{xx.goods}}" wx:key="index">
               <image class="star-size" src="../../images/star3.png"></image>
           </block>
          </view>
         <view class='evaluate_item'>
           <view class='evaluate_title'>{{evaluate_contant[1]}}</view>
-          <block wx:for="{{satisfaction}}" wx:key="index">
+          <block wx:for="{{xx.satisfaction}}" wx:key="index">
               <image class="star-size" src="../../images/star3.png"></image>
           </block>
          </view>
-        <view class="textarea-wrp" wx:for="{{comment}}" wx:for-item="xx" wx:key="xx.id">
+        
         <view class="textarea-view"wx:if="{{xx.id==item.objectId}}" >{{xx.information}} </view>                 
         
       </view>

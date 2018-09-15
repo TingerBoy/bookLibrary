@@ -9,8 +9,6 @@ Page({
     score: 0,
     scores: [0, 0, 0],
     infofromstorage:'',
-    goods: 0,
-    satisfaction: 0,
     comment:[],
   },
   onLoad: function (options) {
@@ -24,21 +22,18 @@ Page({
       var comment = wx.getStorageSync('comment')
       var that=this;
       var value = wx.getStorageSync('infofrominput')
-      this.data.scores[0] = wx.getStorageSync('goods')
-      this.data.scores[1] = wx.getStorageSync('satisfaction')
       if (comment) {
         // Do something with return value
         //打印获取数据
         console.log("获取成功")
-        console.log(value, this.data.scores[0], this.data.scores[1])
         //给原来数据赋值
         this.setData({
           comment:comment,
-          infofromstorage: value,
-          goods: this.data.scores[0],
-          satisfaction: this.data.scores[1],
+       
         })
         console.log(comment);
+        console.log(goods);
+        console.log(satisfaction)
       }else{
         console.log('获取失败')
       }

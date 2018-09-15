@@ -10,9 +10,8 @@ Page({
     halfSrc: '../../images/star3.png',
     score: 0,
     scores: [0, 0, 0],
-    comment: [
-      // {infofrominput: '',goods: 0, satisfaction: 0,id:'',}
-    ]
+  
+    comment: []
    
   },
   onLoad: function (options) {
@@ -33,10 +32,7 @@ Page({
       infofrominput: infofrominput
     })
      
-    
-    // let information="comment[+index+].infofrominput"
-    // console.log(e.detail.value)
-    // information: e.detail.value,
+
   },
 
   // 提交事件
@@ -44,8 +40,8 @@ Page({
     var obj = {};
     obj.id = this.data.bean;
     obj.information = this.data.infofrominput;
-    obj.good = 0;
-    obj.satisfaction = 0;
+    obj.goods = this.data.scores[0];
+    obj.satisfaction = this.data.scores[1];
     array.push(obj);
     this.setData({
       "comment": array
@@ -54,9 +50,6 @@ Page({
     console.log(comment);
     try {
       wx.setStorageSync('comment',comment)
-      // wx.setStorageSync('infofrominput', this.data.infofrominput)
-      // wx.setStorageSync('goods', this.data.scores[0])
-      // wx.setStorageSync('satisfaction', this.data.scores[1])
 
     } catch (e) {
     }

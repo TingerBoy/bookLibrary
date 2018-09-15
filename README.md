@@ -2,9 +2,13 @@
 
 Github：
 https://github.com/TingerBoy/bookLibrary.git
+
 学生：201810088888
+
 教务员：2018002
+
 教师：201810099999
+
 密码六个0
 
 #修复底部菜单问题 -2018.8.7
@@ -25,9 +29,16 @@ https://github.com/TingerBoy/bookLibrary.git
 
 #修改教师评价页面错误
 
+#修复星星问题和评价按钮
+
+BUG列表
+
 1.  评价菜单按钮
+
 4. 评价完后删除
+
 2、查看教学计划
 添加无录入情况
+
 3、教材一览
 对应id跳转（暂不修）

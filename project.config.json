@@ -33,8 +33,33 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "ac",
+					"pathName": "pages/ac/ac",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价进入页面",
+					"pathName": "pages/accessable/accessable",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "查看评论页面",
+					"pathName": "pages/myevaluate_stu/myevaluate_stu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价页面",
+					"pathName": "pages/pingjiabiao/pingjiabiao",
+					"query": ""
+				}
+			]
 		}
 	}
 }

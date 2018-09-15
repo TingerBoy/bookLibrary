@@ -55,8 +55,11 @@
   border: 1px solid #eee;
 }
 .mini-btn{
-  
-  margin:  0 0 0 20rpx;
+  height: 100rpx;
+  width: 200rpx;
+  position: fixed;
+margin:  0 0 0 20rpx;
   margin-left: 250rpx;
+  margin-top: -150rpx;
   
 }
