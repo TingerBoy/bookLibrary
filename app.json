@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/plan/plan",
     "pages/choice/choice",
-    "pages/login/login",
     "pages/suggestion/suggestion",
     "pages/addbook/addbook",
     "pages/clearLogin/clearLogin",
