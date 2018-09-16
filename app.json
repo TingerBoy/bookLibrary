@@ -1,11 +1,10 @@
 {
   "pages": [
-    
+    "pages/plan/plan",
+    "pages/choice/choice",
     "pages/login/login",
     "pages/suggestion/suggestion",
-    "pages/choice/choice",
     "pages/addbook/addbook",
-    "pages/plan/plan",
     "pages/clearLogin/clearLogin",
     "pages/myevaluate_stu/myevaluate_stu",
     "pages/bookmessage/bookmessage",
@@ -18,7 +17,6 @@
     "pages/index/index",
     "pages/teacher/teacher",
     "pages/accessable/accessable",
-    "pages/teacherperson/teacherperson",
     "pages/List/List",
     "pages/stader/stader",
     "pages/yigou/yigou",

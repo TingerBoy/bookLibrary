@@ -78,7 +78,8 @@
   <modal class="modal" hidden="{{hideModal}}" bindconfirm="modalSubmit" bindcancel="modalCancel"
    confirmText="确认提交" cancelText="修正" showCancel="ture">
     <view>
-      <text>您的教学计划</text>
+    <text>录入结束后返回首页\n</text>
+      <text>您的教学计划如下：</text>
     </view>
 <view>
       <text>周次：</text>{{weekly}}</view>
@@ -92,5 +93,6 @@
       <text>课外作业：</text>{{homework}}</view>
     <view>
       <text>备注：</text>{{note}}</view>
+
 
   </modal>

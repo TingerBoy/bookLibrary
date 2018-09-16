@@ -96,9 +96,12 @@ return
       hideModal: true,
       hidetextarea: false,
     })
+    
+    wx.switchTab({
+      url: '../function/function',
+    })
     //缓存数据到本地
     console.log("确认提交")
-
     //获取缓存内容打印确认、
     try {
       var value1 = wx.getStorageSync('weekly')
